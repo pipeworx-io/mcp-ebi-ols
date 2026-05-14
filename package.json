@@ -1,0 +1,20 @@
+{
+  "name": "@pipeworx/mcp-ebi-ols",
+  "version": "0.1.0",
+  "description": "EBI Ontology Lookup Service — 250+ biomedical ontologies",
+  "type": "module",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "keywords": ["mcp", "mcp-server", "model-context-protocol", "pipeworx", "ebi-ols"],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pipeworx-io/mcp-ebi-ols"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.0"
+  }
+}

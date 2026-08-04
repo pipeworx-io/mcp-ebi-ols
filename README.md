@@ -1,19 +1,21 @@
-# mcp-ebi-ols
+# @pipeworx/ebi-ols
 
-EBI OLS4 MCP — Ontology Lookup Service.
+EBI [Ontology Lookup Service (OLS)](https://www.ebi.ac.uk/ols4) MCP — search and traverse ~250 biomedical ontologies (GO, EFO, MONDO, CL, ChEBI, HP, …). Keyless.
 
-Part of [Pipeworx](https://pipeworx.io) — an MCP gateway connecting AI agents to 673+ live data sources.
+Part of [Pipeworx](https://pipeworx.io) — an MCP gateway connecting AI agents to 1394+ live data sources.
 
 ## Tools
 
-| Tool | Description |
-|------|-------------|
-| `list_ontologies` | List loaded ontologies (paginated). |
-| `get_ontology` | Ontology metadata by id (e.g. "efo", "mondo", "go"). |
-| `search` | Full-text search across all ontologies (or one). |
-| `get_term` | Term details. Pass either iri, short_form, or obo_id (the latter two require ontology). |
-| `term_ancestors` | Transitive ancestors of a term. |
-| `term_children` | Direct children of a term. |
+- `list_ontologies(size?, page?)` — list all loaded ontologies
+- `get_ontology(id)` — ontology metadata (latest release, term count, …)
+- `search(query, ontology?, type?, exact?, rows?)` — full-text search across terms
+- `get_term(ontology, iri|short_form|obo_id)` — term details
+- `term_ancestors(ontology, iri)` — transitive parents
+- `term_children(ontology, iri)` — direct children
+
+## Data source
+
+`https://www.ebi.ac.uk/ols4/api/`
 
 ## Quick Start
 
@@ -29,7 +31,7 @@ Add to your MCP client (Claude Desktop, Cursor, Windsurf, etc.):
 }
 ```
 
-Or connect to the full Pipeworx gateway for access to all 673+ data sources:
+Or connect to the full Pipeworx gateway for access to all 1394+ data sources:
 
 ```json
 {
@@ -53,7 +55,7 @@ The gateway picks the right tool and fills the arguments automatically.
 
 ## More
 
-- [All tools and guides](https://github.com/pipeworx-io/examples)
+- [Docs and guides](https://pipeworx.io/docs)
 - [pipeworx.io](https://pipeworx.io)
 
 ## License

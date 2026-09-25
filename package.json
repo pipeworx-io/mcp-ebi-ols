@@ -1,6 +1,6 @@
 {
   "name": "@pipeworx/mcp-ebi-ols",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "EBI OLS4 MCP — Ontology Lookup Service.",
   "type": "module",
   "main": "src/index.ts",
@@ -26,7 +26,7 @@
     "@cloudflare/workers-types": "^4.20260405.1"
   },
   "pipeworx": {
-    "sourceHash": "v1-3cf3fd5f2c4794063c187d323d7d917dc0978c477ba4c986481a7d244378dbb8",
-    "sourceCommit": "76aa8f5d9b5dc2f665563030647c68e661478864"
+    "sourceHash": "v1-0e9901f489d2e1947e263ddf0fa3f7d55d83542801dd0b2c55b07e697ee09799",
+    "sourceCommit": "4fa4c64448be06f4a2ee4cee19f756f3558a7cad"
   }
 }

@@ -1,0 +1,129 @@
+[
+  {
+    "name": "list_ontologies",
+    "description": "EMBL-EBI Ontology Lookup Service (OLS4) — page through every biomedical ontology loaded into OLS, such as GO, EFO, MONDO, ChEBI, HPO and UBERON. Returns each ontology's id, title, description, term count, version and status, with size/page controls. Answers which biomedical ontologies are searchable here and what the short id for one is.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "size": {
+          "type": "number",
+          "description": "1-500 (default 20)."
+        },
+        "page": {
+          "type": "number",
+          "description": "0-based page (default 0)."
+        }
+      }
+    }
+  },
+  {
+    "name": "get_ontology",
+    "description": "Ontology metadata by id (e.g. \"efo\", \"mondo\", \"go\").",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id"
+      ]
+    }
+  },
+  {
+    "name": "search",
+    "description": "Full-text search across all ontologies (or one).",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "query": {
+          "type": "string"
+        },
+        "ontology": {
+          "type": "string",
+          "description": "Restrict to one ontology id (optional)."
+        },
+        "type": {
+          "type": "string",
+          "description": "class | property | individual"
+        },
+        "exact": {
+          "type": "boolean",
+          "description": "Exact-match (default false)."
+        },
+        "rows": {
+          "type": "number",
+          "description": "1-1000 (default 20)."
+        }
+      },
+      "required": [
+        "query"
+      ]
+    }
+  },
+  {
+    "name": "get_term",
+    "description": "Term details. Pass either iri, short_form, or obo_id (the latter two require ontology).",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "ontology": {
+          "type": "string"
+        },
+        "iri": {
+          "type": "string",
+          "description": "Full term IRI (preferred)."
+        },
+        "short_form": {
+          "type": "string"
+        },
+        "obo_id": {
+          "type": "string",
+          "description": "OBO id, e.g. \"EFO:0000408\""
+        }
+      },
+      "required": [
+        "ontology"
+      ]
+    }
+  },
+  {
+    "name": "term_ancestors",
+    "description": "Transitive ancestors of a term.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "ontology": {
+          "type": "string"
+        },
+        "iri": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "ontology",
+        "iri"
+      ]
+    }
+  },
+  {
+    "name": "term_children",
+    "description": "Direct children of a term.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "ontology": {
+          "type": "string"
+        },
+        "iri": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "ontology",
+        "iri"
+      ]
+    }
+  }
+]

@@ -1,12 +1,20 @@
 {
   "name": "@pipeworx/mcp-ebi-ols",
-  "version": "0.1.4",
+  "version": "0.2.0",
   "description": "EBI OLS4 MCP — Ontology Lookup Service.",
   "type": "module",
-  "main": "src/index.ts",
-  "types": "src/index.ts",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./tools.json": "./tools.json",
+    "./package.json": "./package.json"
+  },
   "bin": {
     "mcp-ebi-ols": "bin/cli.js"
+  },
+  "files": ["bin/", "lib/", "tools.json", "server.json"],
+  "engines": {
+    "node": ">=18"
   },
   "keywords": ["mcp", "mcp-server", "model-context-protocol", "pipeworx", "ebi-ols"],
   "license": "MIT",
@@ -14,19 +22,12 @@
     "type": "git",
     "url": "git+https://github.com/pipeworx-io/mcp-ebi-ols.git"
   },
-  "scripts": {
-    "typecheck": "tsc --noEmit"
-  },
-  "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.30.0",
-    "tsx": "^4.19.0"
-  },
-  "devDependencies": {
-    "typescript": "^5.9.3",
-    "@cloudflare/workers-types": "^4.20260405.1"
-  },
+  "mcpName": "io.github.pipeworx-io/ebi-ols",
   "pipeworx": {
-    "sourceHash": "v1-9fdf57773bb1c34ff5612a8cbd040158b1421747d9f938a37a8168888c2ad108",
-    "sourceCommit": "29fb434ca65fe0f61191f19c3502f583f5fb99d7"
+    "mode": "gateway",
+    "slug": "ebi-ols",
+    "gatewaySlug": "ebi-ols",
+    "sourceHash": "v1-4079a8583455aed44bf910a48f2acd8f0ab412d96d184e7e5fedc81ea095768d",
+    "sourceCommit": "bb047243cf27f32453103de186b8e6a8b6a1ce79"
   }
 }
